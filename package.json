@@ -1,13 +1,16 @@
 {
-  "name": "application-name",
+  "name": "quiz",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodejs ./bin/www"
+    "start": "node ./bin/www"
   },
-   "engines": {
+  "engines": {
     "node": "0.10.x",
     "npm": "1.4.x"
+  },
+  "devDependencies": {
+    "sqlite3": "^2.2.0"
   },
   "dependencies": {
     "body-parser": "~1.0.0",
@@ -17,6 +20,9 @@
     "express": "~4.0.0",
     "express-partials": "^0.3.0",
     "morgan": "~1.0.0",
+    "pg": "^4.1.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^1.7.0",
     "static-favicon": "~1.0.0"
   }
 }
