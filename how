@@ -1,0 +1,67 @@
+[33mcommit 787e63ade379209dad6899f0fb2fe91dae16bdeb[m
+Author: Israel Herrera Cabello <isra.herrera@hotmail.com>
+Date:   Mon Jul 13 18:46:48 2015 +0200
+
+    Despliegue db en heroku
+
+[33mcommit 5131967c9a90fa0c9f2b7db11a26a839dc349f40[m
+Merge: 19d5cfe 5d4c7e8
+Author: Israel Herrera Cabello <isra.herrera@hotmail.com>
+Date:   Mon Jun 29 19:14:02 2015 +0200
+
+    Merge branch 'master' of https://github.com/iherrerac/quiz-iherrera
+
+[33mcommit 19d5cfe23996be0ac27c1523d0ca7303b038cad6[m
+Author: Israel Herrera Cabello <isra.herrera@hotmail.com>
+Date:   Mon Jun 29 18:38:12 2015 +0200
+
+    Despliegue Heroku
+
+[33mcommit 5d4c7e867d14e4993db9f105efa7e878f84d5751[m
+Author: Israel Herrera Cabello <isra.herrera@hotmail.com>
+Date:   Mon Jun 29 18:38:12 2015 +0200
+
+    Despliegue Heroku
+
+[33mcommit da7e1f863d10209d9bdbbdcbef3c6c703dbcc202[m
+Merge: 79b6b7c 69d2214
+Author: Israel Herrera Cabello <isra.herrera@hotmail.com>
+Date:   Mon Jun 29 17:19:07 2015 +0200
+
+    Merge de la rama 'Creditos' Israel Herrera
+
+[33mcommit 69d2214c80559d3233de9da8199afbef141880a0[m
+Author: Israel Herrera Cabello <isra.herrera@hotmail.com>
+Date:   Mon Jun 29 17:18:16 2015 +0200
+
+    Creamos rama Creditos y enlace Author en index
+
+[33mcommit 79b6b7c7990919a8e9b5dc47637dd1a0045558ad[m
+Author: Israel Herrera Cabello <isra.herrera@hotmail.com>
+Date:   Mon Jun 29 16:17:15 2015 +0200
+
+    Marco de aplicacion con Express-partials por  Israel Herrera
+
+[33mcommit f21e5d620723e231cea9bfab2d2caa3f627858b5[m
+Author: Israel Herrera Cabello <isra.herrera@hotmail.com>
+Date:   Mon Jun 29 16:17:15 2015 +0200
+
+    Marco de aplicacion con Express-partials por  Israel Herrera
+
+[33mcommit 6add472b92ce7e3aeafc2a36a4e9b60ab8929161[m
+Author: Israel Herrera Cabello <isra.herrera@hotmail.com>
+Date:   Mon Jun 29 15:50:48 2015 +0200
+
+    Primera pregunta por Israel Herrera
+
+[33mcommit 966472142e16404a33a542813befec5a08a02b64[m
+Author: Israel Herrera Cabello <isra.herrera@hotmail.com>
+Date:   Mon Jun 29 14:09:09 2015 +0200
+
+    Primera pagina y Favicon Israel Herrera
+
+[33mcommit 031600d31fb349c6255dd94369fb437bfff9c397[m
+Author: Israel Herrera Cabello <isra.herrera@hotmail.com>
+Date:   Mon Jun 29 12:52:57 2015 +0200
+
+    esqueleto express-generator Creado por Israel Herrera
