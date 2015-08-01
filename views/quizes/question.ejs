@@ -1,4 +1,11 @@
-        <form method="get" action="/quizes/answer">
+		<div id="buscar-preguntas">
+		<form method="get" action="/quizes">
+		<label for="search">Buscador</label>
+		<input type="text" id="search" name="search" placeholder="Busca tu pregunta" />
+		<input type="submit" value="Buscar" />
+		</form></div>
+		
+		<form method="get" action="/quizes/answer">
 		<p>Pregunta: <%= pregunta %></p>
 		<input type="text" name="respuesta" placeholder="Responda aquí" />
 		<input type="submit" value="Enviar">

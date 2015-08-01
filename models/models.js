@@ -27,18 +27,11 @@ var sequelize = new Sequelize(DB_name, user, pwd,
 );
 
 //importar definicion de la tabla quiz en quiz.js
-/*//importar definicion de la tabla quiz en quiz.js*/
 var Quiz = sequelize.import(path.join(__dirname, 'quiz'));
 
-//var quiz_path = path.join(__dirname,'quiz');
-//var Quiz = sequelize.import(quiz_path);
 
 exports.Quiz = Quiz;//exportar la definicion de la tabla quiz 
 
-//Usar BBDD sqlite
-/*var sequelize = new Sequelize(null,null,null,
-								{dialect: "sqlite", storage: "quiz.sqlite"}
-								);*/
 
 // sequelize.sync() inicializa tabla de preguntas en DB
 sequelize.sync().then(function() {
@@ -49,6 +42,9 @@ sequelize.sync().then(function() {
       Quiz.create({pregunta: 'Capital de Italia', 
       			   respuesta: 'Roma'
       			  })
+      Quiz.create({pregunta: 'Capital de portugal',
+					 respuesta: 'lisboa'
+					 })
       .then(function(){console.log('Base de datos inicializada')});
     };
   });
