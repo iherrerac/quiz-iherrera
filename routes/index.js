@@ -13,6 +13,9 @@ router.get('/', function(req, res) {
 
 // Autoload de comandos con :quizId
 router.param('quizId', quizController.load); // autoload :quizId
+router.get('/author', function(req, res, next) {
+  res.render('author.ejs', { nombre: 'Israel Herrera', title: 'Créditos', errors: [] });
+});
 
 // Definición de rutas de /quizes
 router.get('/quizes', 					   quizController.index);
@@ -23,7 +26,7 @@ router.post('/quizes/create',              quizController.create);
 router.get('/quizes/:quizId(\\d+)/edit',   quizController.edit);
 router.put('/quizes/:quizId(\\d+)',        quizController.update);
 router.delete('/quizes/:quizId(\\d+)',     quizController.destroy);
-router.get ('/author', function(req, res) { res.render('author.ejs'), { title: 'Créditos' };});
+
 
 
 module.exports = router;
