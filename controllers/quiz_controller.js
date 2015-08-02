@@ -1,36 +1,53 @@
 var models = require('../models/models.js');
 
-/*// Autoload - factoriza el código si la ruta incluye :quizId
+
+// Autoload - factoriza el código si ruta incluye :quizID
 exports.load = function(req, res, next, quizId) {
-  models.Quiz.find({
-  where: { id: Number(quizId) },
-  include: [{ model: models.Comment }]
-    }).then(
+  models.Quiz.findById(quizId).then(
     function(quiz) {
       if (quiz) {
-  req.quiz = quiz;
-  next();
-      } else { next(new Error('No existe quizId= ' + quizId)); }
-    } 
-  ).catch(function(error) { next(error); } );
-};*/
+        req.quiz = quiz;
+        next();
+      } else { next(new Error('No existe quizId= ' + quizId)); }  
+    }
+  ).catch(function(error) { next(error);});
+};
 
-// GET /quizes         (Variable filtro para la busqueda)  
+
+// GET /quizes
 exports.index = function(req, res) {
-  var filtro = { };
-  if(req.query.search){
-    search = req.query.search;
-    search = search.split(" ").join("%");
-    search = "%" + search + "%";
-    filtro = {
-      where: ["lower(pregunta) like lower(?)", search],
-      order: [["pregunta", "ASC"]]
-    };
-  }
+  var options = {};
+   
+  models.Quiz.findAll(options).then(
+    function(quizes) {
+      if (req.query.search !== undefined) {
+          //console.log("Primero: "+req.query.search);
+          req.query.search = req.query.search.replace(/^| |$/g,'%');
+          //console.log("Despues: "+req.query.search);
+          models.Quiz.findAll({where: [ "lower(pregunta) like ?", req.query.search.toLowerCase()], order: [["pregunta"]]}).then(
+            function(quizes){
+                    res.render('quizes/index.ejs', {quizes: quizes});
+              });
+      }else {
+          res.render('quizes/index.ejs', {quizes: quizes});          //order: [['name', 'DESC']]
+        }
+    }
+    ).catch(function(error) { next(error)});
+ 
+};
 
-  models.Quiz.findAll(filtro).then(function(quizes) {
-    res.render('quizes/index.ejs', { quizes: quizes, errors: []});
-  }).catch(function(error) { next(error);})
+// GET /quizes/:id
+exports.show = function(req, res) {
+  res.render('quizes/show', { quiz: req.quiz});
+};
+
+// GET  /quizes/:id/answer
+exports.answer = function(req, res) {
+  var resultado = 'Incorrecto';
+  if (req.query.respuesta.toLowerCase() === req.quiz.respuesta.toLowerCase()) {
+      resultado = 'Correcto';
+  }
+  res.render('quizes/answer', {quiz: req.quiz, respuesta: resultado});
 };
 
 
@@ -41,7 +58,7 @@ exports.index= function(req,res){
   })
  };*/  
 
-
+/*
 // GET /quizes/:id
 exports.show = function (req,res){
 models.Quiz.findById(req.params.quizId).then(function(quiz) {
@@ -60,3 +77,4 @@ models.Quiz.findById(req.params.quizId).then(function(quiz){
       }
   })
 };
+*/
