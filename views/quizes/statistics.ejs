@@ -1,0 +1,27 @@
+<h3>Estadisticas</h3>
+<table>
+  <tr>
+    <th>Renglones</th>
+    <th>Valor</th>
+  </tr>
+  <tr>
+    <td>Cantidad de Preguntas</td>
+    <td><%= numpreguntas %></td>
+  </tr>
+  <tr>
+    <td>Total de Comentarios</td>
+    <td><%= numcomentarios %></td>
+  </tr>
+  <tr>
+    <td>Promedio de Comentarios por Pregunta</td>
+    <td><%= mediacomentarios.toPrecision(3) %></td>
+  </tr>
+  <tr>
+    <td>Numero de Preguntas sin Comentarios</td>
+    <td><%= numpreguntassincomentarios %></td>
+  </tr>
+  <tr>
+    <td>Numero de Preguntas con Comentarios</td>
+    <td><%= numpreguntasconcomentarios %></td>
+  </tr>
+</table>
