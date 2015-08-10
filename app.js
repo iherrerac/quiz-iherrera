@@ -43,6 +43,25 @@ app.use(function(req, res, next) {
 
 });
 
+// Practica MOD9: Deslogon automatico a los 2 min.
+app.use(function(req,res,next){
+    if(req.session.user != null){
+        if(req.session.timepassed == null){
+  
+        } else {
+            var restasesion = process.hrtime(req.session.timepassed);
+            if(restasesion[0]>=120){
+                delete req.session.user;
+                res.redirect('/login');
+            }
+            
+        }
+        req.session.timepassed = process.hrtime();
+    }
+
+    next();
+});
+
 
 app.use('/', routes);
 //app.use('/users', users);
